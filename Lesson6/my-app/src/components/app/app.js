@@ -93,32 +93,6 @@ export default class App extends Component {
         });
     }
 
-    // onToggleImportant(id) {
-    //     this.setState(({data}) => {
-    //         const index = data.findIndex(elem => elem.id === id);
-    //         const old = data[index];
-    //         const newItem = {...old, important: !old.important};
-    //         const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)];
-
-    //         return {
-    //             data: newArr
-    //         }
-    //     });
-    // }
-
-    // onToggleLike(id) {
-    //     this.setState(({data}) => {
-    //         const index = data.findIndex(elem => elem.id === id);
-    //         const old = data[index];
-    //         const newItem = {...old, like: !old.like};
-    //         const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)];
-
-    //         return {
-    //             data: newArr
-    //         }
-    //     });
-    // }
-
     searchPost(items, term) {
         if (term.length === 0) { 
             return items 
@@ -166,7 +140,6 @@ export default class App extends Component {
                 <PostList 
                         posts={visiblePosts}
                         onDelete={this.deleteItem}
-                        onToggleButton={this.onToggleButton}
                         onToggleButton={this.onToggleButton}/>
                 <PostAddForm
                     onAdd={this.addItem}/>

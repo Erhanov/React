@@ -7,20 +7,18 @@ export default class PostListItem extends Component {
         if (important) {classNames += ' important';}
         if (like) {classNames += ' like';}
 
-        console.log(important)
-
         return (
             <div className={classNames}>
                 <span 
                     className='app-list-item-label'
-                    onClick={onToggleButton}>
+                    onClick={() => onToggleButton('like')}>
                     {label}
                 </span>
                 <div className='d-flex justify-content-center align-items-center'>
                     <button 
                         type='button' 
                         className='btn-star btn-sm'
-                        onClick={onToggleButton}
+                        onClick={() => onToggleButton('important')}
                     >
                         <i className='fa fa-star'></i>
                     </button>

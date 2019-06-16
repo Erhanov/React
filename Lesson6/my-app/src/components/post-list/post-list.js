@@ -10,7 +10,7 @@ const AppList = styled.ul`
     }
 `;
 
-const PostList = ({posts, onDelete, onToggleImportant, onToggleLike, onToggleButton}) => {
+const PostList = ({posts, onDelete, onToggleButton}) => {
     let filtered = [];
 
     for (let i = 0; i < posts.length; i++) {
@@ -27,8 +27,7 @@ const PostList = ({posts, onDelete, onToggleImportant, onToggleLike, onToggleBut
                         // label={item.label} 
                         // important={item.important} 
                         onDelete={() => onDelete(id)}
-                        onToggleButton={() => onToggleButton(id, 'important')}
-                        onToggleButton={() => onToggleButton(id, 'like')}
+                        onToggleButton={(choice) => onToggleButton(id, choice)}
                 />
             </li>
         )
